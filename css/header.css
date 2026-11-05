@@ -1,0 +1,48 @@
+
+/* Cabeçalho */
+header {
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo span h2 {
+  font-size: 1.2rem;
+  color: #04452c;
+}
+.logo span p {
+  font-size: 0.8rem;
+  color: #3e674a;
+}
+header .menu {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .menu ul {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .menu ul li a {
+  text-decoration: none;
+  color: #04452c;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
