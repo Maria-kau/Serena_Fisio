@@ -3,14 +3,14 @@ const servicos = [
     {
         icone: "assets/icons/icone1.png",
         titulo: "Fisioterapia Ortopédica <br> e Traumatológica",
-        descricao: "Tratamento para lesões, dores<br> e recuperação pós-cirúrgica.",
-        pages: "./PagesHTML/sobre_ortopedia.html"
+        descricao: "Tratamento para lesões, dores e recuperação pós-cirúrgica.",
+        
     },
 
     {
         icone: "assets/icons/icone2.png",
         titulo: "Fisioterapia Esportiva",
-        descricao: "Prevenção e reabilitação <br> de lesões esportivas.",
+        descricao: "Prevenção e reabilitação de lesões esportivas.",
         pages: "./PagesHTML/sobre_esportiva.html"
     },
 
@@ -18,21 +18,20 @@ const servicos = [
         icone: "assets/icons/icone3.png",
         titulo: "Fisioterapia Neurológica",
         descricao: "Tratamento para condições neurológicas e recuperação funcional.",
-        pages: "./PagesHTML/sobre_neurologia.html"
+        
     },
 
     {
         icone: "assets/icons/icone4.png",
         titulo: "Pilates Clínico",
         descricao: "Fortalecimento, mobilidade e equilíbrio corporal.",
-        pages: "./PagesHTML/sobre_pilates.html"
+
     },
 
     {
         icone: "assets/icons/icone5.png",
         titulo: "Reabilitação Funcional",
         descricao: "Recupera sua autonomia e qualidade de vida.",
-        pages: "./PagesHTML/sobre_reabilitacao.html"
     }
 ];
 
@@ -55,11 +54,6 @@ export function Servicos() {
                     <h3>${servico.titulo}</h3>
 
                     <p>${servico.descricao}</p>
-
-                    <a href="${servico.pages}">
-                        Saiba Mais
-                        <i class="bi bi-arrow-right-short"></i>
-                    </a>
 
                 </div>
 

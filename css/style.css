@@ -1,194 +1,420 @@
-/* Reset global */
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ==============================
+   RESET GLOBAL
+============================== */
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* Configurações gerais */
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #a8c1ad;
+}
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
-/* Seção principal */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==============================
+   HERO SECTION
+============================== */
+
 .hero-section {
-  width: 100%;
-  min-height: 50vh;
-  display: flex;
-  background-color: #a8c1ad9e;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    background-color: #a8c1ad9e;
 }
 
-/* Banner principal */
 .hero-banner {
-  width: 100%;
-  height: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 0 80px;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+    padding: 0 80px;
 }
 
 .hero-content {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    gap: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.hero-buttons .hero-mais {
+    padding: 20px 0;
 }
 
 /* Imagem do banner */
-.img-banner {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 20%,
-    black 80%,
-    transparent 100%
-  );
 
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 20%,
-    black 80%,
-    transparent 100%
-  );
+.img-banner {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+
+    -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+
+    -webkit-mask-composite: source-in;
+
+    mask-image:
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+
+    mask-composite: intersect;
 }
+
+/* ==============================
+   ABOUT SECTION
+============================== */
 
 .about-section,
 .professional-profile {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 50px 0;
-  padding: 0 80px;
+    width: 100%;
+    padding: 80px 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .about-content {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+/* Perfil profissional */
+
 .professional-profile ul {
-  width: 600px;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  gap: 10px;
+    width: min(600px, 100%);
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
 }
+
+.professional-profile ul li i {
+    border: 2px solid #0a3923;
+    border-radius: 50%;
+    padding: 2px 4px;
+
+    font-size: 2rem;
+    color: #04452c;
+}
+
+.perfil-botton,
+.hero-button {
+    background-color: rgb(5, 68, 60);
+    color: #d2eed7;
+}
+
+/* Imagem sobre */
+
+.about-section img {
+    width: 250px;
+    height: 250px;
+
+    object-fit: cover;
+    background-color: #3d62539e;
+    border-radius: 150px;
+}
+
+/* ==============================
+   TIPOS DE SERVIÇOS
+============================== */
+
 .typeService {
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  background-color: #c5b6ce9e;
-  border-radius: 25px;
+    min-height: 150px;
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+    padding: 0 40px;
+    background-color: #c5b6ce9e;
+    border-radius: 25px;
 }
 
 .typeService ul {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  list-style: none;
-  flex-direction: column;
-  padding: 40px 20px;
+    width: 100%;
+    flex: 1;
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    list-style: none;
+    padding: 40px 20px;
 }
 
 .typeService ul li {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 30px;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 30px;
 }
 
-.typeService ul li i,
-.professional-profile ul li i {
-  border: #0a3923 2px solid;
-  border-radius: 50%;
-  padding: 2px 4px;
-  font-size: 2rem;
-  color: #04452c;
-}
 .typeService ul li i {
-  font-size: 1.9rem;
-  color: #04452c;
-  border: none;
-  border-radius: none;
-  padding: none;
+    font-size: 1.9rem;
+    color: #04452c;
 }
 
-.about-section img {
-  background-color: #3d62539e;
-  border-radius: 150px;
-  width: 250px;
-  height: 250px;
-}
+/* ==============================
+   SERVICES SECTION
+============================== */
+
 .services-section {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px;
+    gap: 20px;
 }
+
 .services-list {
-  gap: 20px;
-  padding: 20px;
-  display: flex;
-  width: 100%;
-  flex-direction: row;
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .service-card {
-  width: 100%;
-  padding: 20px;
-  margin: 10px 0;
-  background-color: #afc2b5b3;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    min-width: 0;
+
+    padding: 20px;
+    margin: 10px 0;
+
+    background-color: #afc2b5b3;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
-/* Seção de contato */
+
+.service-card p {
+    color: #0a3923;
+    font-weight: 400;
+}
+
+.service-card h3 {
+    color: #0a3923;
+    font-size: 18px;
+    font-weight: 400;
+}/* ==============================
+   CTA SECTION
+============================== */
+
+.cta-geral {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+
 .cta-section {
-  width: 100%;
-  min-height: 450px;
-  padding: 60px 8%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-
-  background-color: #e8eee9;
+    width: 90%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: rgb(4, 52, 46);
 }
 
-.img-benefits {
-  width: 100%;
-  max-width: 500px;
-  height: 350px;
+/* Imagem */
 
-  object-fit: cover;
-  border-radius: 20px;
+.img-content {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.img-content img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+
+    -webkit-mask-composite: source-in;
+
+    mask-image:
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+
+    mask-composite: intersect;
+}
+
+.cta-content {
+    width: 60%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta-text {
+    height: 100%;
+
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cta-buttons {
+    width: 50%;
+    gap: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-button,
+.perfil-botton,
+.hero-button {
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.cta-button {
+    background-color: #dadfdc;
+    color: #04452c;
+}
+
+.what-button {
+    color: #d2eed7;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+/* ==============================
+   BENEFITS SECTION
+============================== */
+
+.benefits-sections {
+    width: 100%;
+    height: 150px;
+    margin: 60px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e5dbeb9e;
+}
+
+.benefits-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 0 70px;
+}
+
+.benefits-subtitle {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.benefits-subtitle h3 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Cinzel", serif;
+}
+
+.benefits-subtitle i {
+    font-size: 1.9rem;
+    color: #04452c;
 }

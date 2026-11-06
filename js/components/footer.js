@@ -4,7 +4,7 @@ export function Footer() {
         <footer>
             
             <div class="logo">
-                <i class="bi bi-heart-pulse"></i>
+                <img src="assets/icons/ico.logo.png" alt="Logo" width="50" height="50">
                 <span>Dra. Helena Lopes</span>
             </div>
             <div class="container">
