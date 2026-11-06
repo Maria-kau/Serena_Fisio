@@ -208,3 +208,15 @@ section[id] {
     font-size: 25px;
     cursor: pointer;
 }
+
+/* Desfocar todo o fundo quando o card estiver aberto */
+body.modal-aberto > *:not(#duvidas) {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+/* Manter o card de dúvidas nítido */
+#duvidas {
+    filter: none;
+    z-index: 2000;
+}

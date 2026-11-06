@@ -1,4 +1,3 @@
-
 import { Header } from "./components/header.js";
 import { Footer } from "./components/footer.js";
 import { Servicos } from "./pages/servicos.js";
@@ -24,10 +23,10 @@ if (servicesContainer) {
     servicesContainer.innerHTML = Servicos();
 }
 
-// Evento do botão de dúvidas
+// Eventos de clique
 document.addEventListener("click", (event) => {
 
-    // Verifica se o clique foi no botão Dúvidas
+    // Abrir ou fechar o card de dúvidas
     if (event.target.closest("#btn-duvidas")) {
         event.preventDefault();
 
@@ -35,20 +34,18 @@ document.addEventListener("click", (event) => {
 
         if (cardExistente) {
             cardExistente.remove();
+            document.body.classList.remove("modal-aberto");
         } else {
             document.body.insertAdjacentHTML("beforeend", Duvida());
+            document.body.classList.add("modal-aberto");
         }
     }
 
-    // Verifica se clicou no botão fechar
+    // Fechar card principal
     if (event.target.closest("#fechar-duvidas")) {
         document.getElementById("duvidas")?.remove();
+        document.body.classList.remove("modal-aberto");
     }
-});
-
-
-// Abrir e fechar o card de dúvidas respondidas
-document.addEventListener("click", (event) => {
 
     // Abrir segundo card
     if (event.target.closest("#btn-card-duvidas")) {
@@ -69,49 +66,42 @@ document.addEventListener("click", (event) => {
             cardLista.style.display = "none";
         }
     }
-
-    // Fechar card principal
-    if (event.target.closest("#fechar-duvidas")) {
-        document.getElementById("duvidas")?.remove();
-    }
-
 });
 
-
-
+// Enviar dúvidas
 document.addEventListener("submit", (event) => {
 
-    // Verifica se o formulário enviado é o de dúvidas
+    // Verificar formulário
     if (event.target.id !== "duvida-form") return;
 
     event.preventDefault();
 
-    // Capturar os valores dos campos
+    // Capturar valores
     const nome = document.getElementById("nome-duvida").value.trim();
     const pergunta = document.getElementById("texto-duvida").value.trim();
 
-    // Verificar se os campos estão preenchidos
+    // Verificar preenchimento
     if (!nome || !pergunta) return;
 
-    // Selecionar a lista
+    // Selecionar lista
     const lista = document.getElementById("lista-duvidas");
 
-    // Criar um novo item
+    // Criar item
     const item = document.createElement("li");
 
-    // Criar o nome
+    // Criar nome
     const nomeElemento = document.createElement("strong");
     nomeElemento.textContent = nome;
 
-    // Criar a mensagem
+    // Criar mensagem
     const mensagemElemento = document.createElement("p");
     mensagemElemento.textContent = pergunta;
 
-    // Colocar nome e mensagem dentro do item
+    // Adicionar elementos
     item.appendChild(nomeElemento);
     item.appendChild(mensagemElemento);
 
-    // Adicionar o item à lista
+    // Inserir na lista
     lista.appendChild(item);
 
     // Esconder mensagem de lista vazia
@@ -121,7 +111,6 @@ document.addEventListener("submit", (event) => {
         mensagemVazia.hidden = true;
     }
 
-    // Limpar os campos
+    // Limpar formulário
     event.target.reset();
-
 });
