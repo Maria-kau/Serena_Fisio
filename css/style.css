@@ -39,8 +39,8 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    padding-top: var(--header-height, 70px);
 }
 
 /* ==============================
@@ -49,14 +49,13 @@ main {
 
 .hero-section {
     width: 100%;
-    min-height: 50vh;
     display: flex;
     background-color: #a8c1ad9e;
 }
 
 .hero-banner {
     width: 100%;
-    min-height: 100vh;
+    min-height: min(760px, calc(100svh - var(--header-height, 70px)));
 
     display: flex;
     flex-direction: row;
@@ -64,11 +63,13 @@ main {
     align-items: center;
 
     text-align: center;
-    padding: 0 80px;
+    gap: clamp(32px, 5vw, 80px);
+    padding: 48px clamp(24px, 6vw, 80px);
 }
 
 .hero-content {
-    width: 50%;
+    flex: 1 1 50%;
+    min-width: 0;
 
     display: flex;
     flex-direction: column;
@@ -92,8 +93,10 @@ main {
 /* Imagem do banner */
 
 .img-banner {
-    width: 100%;
-    max-width: 800px;
+    flex: 1 1 50%;
+    width: 50%;
+    max-width: 700px;
+    min-width: 0;
     border-radius: 10px;
 
     -webkit-mask-image:
@@ -113,19 +116,20 @@ main {
    ABOUT SECTION
 ============================== */
 
-.about-section,
-.professional-profile {
+.about-section {
     width: 100%;
-    padding: 80px 100px;
+    padding: 80px clamp(24px, 6vw, 100px);
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: clamp(24px, 4vw, 56px);
 }
 
 .about-content {
-    width: 50%;
+    flex: 1 1 500px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,7 +140,7 @@ main {
 /* Perfil profissional */
 
 .professional-profile ul {
-    width: min(600px, 100%);
+    width: 100%;
 
     list-style: none;
 
@@ -166,6 +170,7 @@ main {
 .about-section img {
     width: 250px;
     height: 250px;
+    flex: 0 0 250px;
 
     object-fit: cover;
     background-color: #3d62539e;
@@ -178,7 +183,9 @@ main {
 
 .typeService {
     min-height: 150px;
-    width: 500px;
+    width: min(100%, 380px);
+    flex: 0 1 380px;
+    min-width: 0;
 
     display: flex;
     flex-direction: column;
@@ -186,7 +193,7 @@ main {
     align-items: center;
 
     gap: 20px;
-    padding: 0 40px;
+    padding: 0 24px;
     background-color: #c5b6ce9e;
     border-radius: 25px;
 }
@@ -212,7 +219,7 @@ main {
     justify-content: flex-start;
     align-items: center;
 
-    gap: 30px;
+    gap: 18px;
 }
 
 .typeService ul li i {
@@ -225,28 +232,25 @@ main {
 ============================== */
 
 .services-section {
-    width: 100%;
+    width: min(100%, 1440px);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 80px;
+    padding: 80px clamp(24px, 6vw, 80px);
     gap: 20px;
 }
 
 .services-list {
     width: 100%;
-    padding: 20px;
-
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
     gap: 20px;
 }
 
 .service-card {
-    flex: 1;
     min-width: 0;
 
     padding: 20px;
@@ -275,21 +279,19 @@ main {
 ============================== */
 
 .cta-geral {
-    min-height: 150px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 0;
+    padding: 40px 16px;
 }
 
 .cta-section {
-    width: 90%;
-    height: 100%;
+    width: min(1200px, 100%);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: stretch;
     background-color: rgb(4, 52, 46);
 }
@@ -297,13 +299,14 @@ main {
 /* Imagem */
 
 .img-content {
-    width: 40%;
+    width: 35%;
     flex-shrink: 0;
 }
 
 .img-content img {
     width: 100%;
     height: 100%;
+    min-height: 300px;
 
     object-fit: cover;
     display: block;
@@ -322,16 +325,20 @@ main {
 }
 
 .cta-content {
-    width: 60%;
+    flex: 1;
+    min-width: 0;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 24px;
+    padding: 32px;
 }
 
 .cta-text {
-    height: 100%;
+    flex: 1 1 0;
+    min-width: 0;
 
     display: flex;
     gap: 10px;
@@ -341,7 +348,8 @@ main {
 }
 
 .cta-buttons {
-    width: 50%;
+    flex: 0 1 240px;
+    min-width: 0;
     gap: 15px;
 
     display: flex;
@@ -381,8 +389,9 @@ main {
 
 .benefits-sections {
     width: 100%;
-    height: 150px;
+    min-height: 150px;
     margin: 60px 0;
+    padding: 28px 0;
 
     display: flex;
     align-items: center;
@@ -393,19 +402,18 @@ main {
 
 .benefits-content {
     width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    padding: 0 70px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    padding: 0 clamp(24px, 6vw, 70px);
 }
 
 .benefits-subtitle {
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
 }
 
 .benefits-subtitle h3 {
@@ -415,6 +423,217 @@ main {
 }
 
 .benefits-subtitle i {
+    flex: 0 0 auto;
     font-size: 1.9rem;
     color: #04452c;
+}
+
+@media (max-width: 1024px) {
+    .hero-banner {
+        min-height: auto;
+        gap: 32px;
+        padding: 48px 32px;
+    }
+
+    .hero-content {
+        gap: 16px;
+    }
+
+    .about-section {
+        flex-wrap: wrap;
+        padding: 64px 32px;
+    }
+
+    .about-content {
+        flex-basis: calc(100% - 300px);
+    }
+
+    .typeService {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .typeService ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        padding: 28px 8px;
+    }
+
+    .services-section {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 28px;
+    }
+
+    .cta-buttons {
+        flex: 1 1 auto;
+        align-items: flex-start;
+    }
+
+    .benefits-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        padding: 40px 24px;
+    }
+
+    .hero-content {
+        flex: 0 1 auto;
+        width: 100%;
+    }
+
+    .img-banner {
+        flex: 0 1 auto;
+        width: min(100%, 560px);
+        max-height: 42vh;
+        object-fit: cover;
+    }
+
+    .about-section {
+        flex-direction: column;
+        padding: 56px 24px;
+        gap: 28px;
+    }
+
+    .about-section img {
+        width: 200px;
+        height: 200px;
+        flex-basis: 200px;
+    }
+
+    .about-content {
+        width: 100%;
+        flex: 1 1 auto;
+    }
+
+    .professional-profile {
+        width: 100%;
+    }
+
+    .professional-profile ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 20px;
+    }
+
+    .professional-profile ul li {
+        flex: 1 1 140px;
+    }
+
+    .typeService ul {
+        grid-template-columns: 1fr;
+    }
+
+    .services-section {
+        padding: 56px 24px;
+    }
+
+    .img-content {
+        display: none;
+    }
+
+    .cta-content {
+        padding: 28px 24px;
+    }
+
+    .benefits-sections {
+        margin: 32px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner {
+        padding: 32px 18px;
+    }
+
+    .hero-content {
+        gap: 14px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-button,
+    .cta-button {
+        max-width: 100%;
+        padding: 14px 20px;
+        text-align: center;
+    }
+
+    .img-banner {
+        max-height: 32vh;
+    }
+
+    .about-section {
+        padding: 44px 18px;
+    }
+
+    .professional-profile ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .professional-profile ul li {
+        flex-basis: auto;
+    }
+
+    .typeService {
+        padding: 0 16px;
+        border-radius: 18px;
+    }
+
+    .typeService ul {
+        padding: 24px 4px;
+    }
+
+    .typeService ul li {
+        gap: 12px;
+    }
+
+    .services-section {
+        padding: 44px 18px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-geral {
+        padding: 24px 12px;
+    }
+
+    .cta-content {
+        padding: 24px 18px;
+    }
+
+    .cta-buttons {
+        align-items: stretch;
+    }
+
+    .what-button {
+        text-align: center;
+    }
+
+    .benefits-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefits-subtitle {
+        justify-content: flex-start;
+    }
 }

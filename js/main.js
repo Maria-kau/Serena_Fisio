@@ -1,16 +1,22 @@
-import { Header } from "./components/header.js";
+
+import {
+    Header,
+    configurarMenuResponsivo
+} from "./components/header.js";
 import { Footer } from "./components/footer.js";
 import { Servicos } from "./pages/servicos.js";
 import { Duvida } from "./pages/duvida.js";
+import { configurarAgendamento } from "./pages/contato.js";
+
 
 // Elementos principais
 const header = document.querySelector("#header");
 const footer = document.querySelector("#footer");
 const servicesContainer = document.querySelector("#services-container");
 
-// Inserir cabeçalho
 if (header) {
     header.innerHTML = Header();
+    configurarMenuResponsivo();
 }
 
 // Inserir rodapé
@@ -23,94 +29,118 @@ if (servicesContainer) {
     servicesContainer.innerHTML = Servicos();
 }
 
+let focoAnteriorDuvidas = null;
+
+function fecharDuvidas() {
+    document.getElementById("duvidas")?.remove();
+    document.body.classList.remove("modal-aberto");
+
+    if (focoAnteriorDuvidas instanceof HTMLElement) {
+        focoAnteriorDuvidas.focus();
+    }
+
+    focoAnteriorDuvidas = null;
+}
+
 // Eventos de clique
 document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
 
-    // Abrir ou fechar o card de dúvidas
-    if (event.target.closest("#btn-duvidas")) {
+    const gatilhoDuvidas = event.target.closest(".btn-duvidas");
+
+    if (gatilhoDuvidas) {
         event.preventDefault();
 
-        const cardExistente = document.getElementById("duvidas");
-
-        if (cardExistente) {
-            cardExistente.remove();
-            document.body.classList.remove("modal-aberto");
+        if (document.getElementById("duvidas")) {
+            fecharDuvidas();
         } else {
+            focoAnteriorDuvidas = gatilhoDuvidas;
             document.body.insertAdjacentHTML("beforeend", Duvida());
             document.body.classList.add("modal-aberto");
+            document.querySelector(".duvidas-card")?.focus();
         }
+
+        return;
     }
 
-    // Fechar card principal
-    if (event.target.closest("#fechar-duvidas")) {
-        document.getElementById("duvidas")?.remove();
-        document.body.classList.remove("modal-aberto");
+    if (
+        event.target.id === "duvidas" ||
+        event.target.closest("#fechar-duvidas")
+    ) {
+        fecharDuvidas();
+        return;
     }
 
-    // Abrir segundo card
     if (event.target.closest("#btn-card-duvidas")) {
-        event.preventDefault();
-
         const cardLista = document.getElementById("card-lista-duvidas");
 
         if (cardLista) {
-            cardLista.style.display = "block";
+            cardLista.hidden = false;
+            event.target
+                .closest("#btn-card-duvidas")
+                .setAttribute("aria-expanded", "true");
         }
+
+        return;
     }
 
-    // Fechar segundo card e voltar ao formulário
     if (event.target.closest("#fechar-card-duvida")) {
         const cardLista = document.getElementById("card-lista-duvidas");
 
         if (cardLista) {
-            cardLista.style.display = "none";
+            cardLista.hidden = true;
+            document
+                .getElementById("btn-card-duvidas")
+                ?.setAttribute("aria-expanded", "false");
         }
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && document.getElementById("duvidas")) {
+        fecharDuvidas();
     }
 });
 
 // Enviar dúvidas
 document.addEventListener("submit", (event) => {
-
-    // Verificar formulário
-    if (event.target.id !== "duvida-form") return;
+    if (
+        !(event.target instanceof HTMLFormElement) ||
+        event.target.id !== "duvida-form"
+    ) {
+        return;
+    }
 
     event.preventDefault();
 
-    // Capturar valores
-    const nome = document.getElementById("nome-duvida").value.trim();
-    const pergunta = document.getElementById("texto-duvida").value.trim();
+    const formulario = event.target;
+    const dados = new FormData(formulario);
+    const nome = String(dados.get("nome") || "").trim();
+    const pergunta = String(dados.get("duvida") || "").trim();
+    const lista = document.querySelector("#duvidas #lista-duvidas");
 
-    // Verificar preenchimento
-    if (!nome || !pergunta) return;
+    if (!nome || !pergunta || !lista) return;
 
-    // Selecionar lista
-    const lista = document.getElementById("lista-duvidas");
-
-    // Criar item
     const item = document.createElement("li");
-
-    // Criar nome
     const nomeElemento = document.createElement("strong");
     nomeElemento.textContent = nome;
-
-    // Criar mensagem
     const mensagemElemento = document.createElement("p");
     mensagemElemento.textContent = pergunta;
 
-    // Adicionar elementos
     item.appendChild(nomeElemento);
     item.appendChild(mensagemElemento);
-
-    // Inserir na lista
     lista.appendChild(item);
 
-    // Esconder mensagem de lista vazia
-    const mensagemVazia = document.getElementById("mensagem-vazia");
-
+    const mensagemVazia = document.querySelector(
+        "#duvidas #mensagem-vazia"
+    );
     if (mensagemVazia) {
         mensagemVazia.hidden = true;
     }
 
-    // Limpar formulário
-    event.target.reset();
+    formulario.reset();
 });
+//
+
+// Configurar agendamento
+configurarAgendamento();

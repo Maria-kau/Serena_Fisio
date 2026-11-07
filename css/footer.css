@@ -1,4 +1,8 @@
-/* FOOTER */
+
+/* =====================================
+   FOOTER
+===================================== */
+
 footer {
     width: 100%;
     padding: 40px 80px 20px;
@@ -13,11 +17,22 @@ footer {
     gap: 30px;
 }
 
-/* LOGO */
+
+/* =====================================
+   LOGO
+===================================== */
+
 footer .logo {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+footer .logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 footer .logo i {
@@ -30,7 +45,11 @@ footer .logo span {
     font-weight: 600;
 }
 
-/* CONTAINER CENTRAL */
+
+/* =====================================
+   CONTAINER CENTRAL
+===================================== */
+
 footer .container {
     display: flex;
     flex-direction: column;
@@ -38,7 +57,11 @@ footer .container {
     gap: 20px;
 }
 
-/* MENU */
+
+/* =====================================
+   MENU
+===================================== */
+
 footer .menu ul {
     display: flex;
     flex-direction: row;
@@ -59,7 +82,11 @@ footer .menu a:hover {
     color: #a8c1ad;
 }
 
-/* DIREITOS AUTORAIS */
+
+/* =====================================
+   DIREITOS AUTORAIS
+===================================== */
+
 footer .container p {
     font-size: 0.8rem;
     color: #c5d0ca;
@@ -67,7 +94,11 @@ footer .container p {
     max-width: 600px;
 }
 
-/* REDES SOCIAIS */
+
+/* =====================================
+   REDES SOCIAIS
+===================================== */
+
 footer .social-media {
     display: flex;
     align-items: center;
@@ -83,4 +114,149 @@ footer .social-media a {
 footer .social-media a:hover {
     color: #a8c1ad;
     transform: translateY(-3px);
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - TABLETS
+===================================== */
+
+@media (max-width: 1024px) {
+
+    footer {
+        padding: 35px 40px 20px;
+        gap: 25px;
+    }
+
+    footer .menu ul {
+        gap: 18px;
+    }
+
+    footer .menu a {
+        font-size: 0.9rem;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - CELULARES
+===================================== */
+
+@media (max-width: 768px) {
+
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 35px 25px 20px;
+        gap: 30px;
+    }
+
+    footer .logo {
+        justify-content: center;
+    }
+
+    footer .container {
+        width: 100%;
+        gap: 18px;
+    }
+
+    footer .menu {
+        width: 100%;
+    }
+
+    footer .menu ul {
+        flex-wrap: wrap;
+        gap: 15px 22px;
+    }
+
+    footer .menu a {
+        font-size: 0.9rem;
+    }
+
+    footer .container p {
+        max-width: 100%;
+        font-size: 0.75rem;
+    }
+
+    footer .social-media {
+        justify-content: center;
+        gap: 25px;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - CELULARES PEQUENOS
+===================================== */
+
+@media (max-width: 480px) {
+
+    footer {
+        padding: 30px 18px 20px;
+        gap: 25px;
+    }
+
+    footer .logo i {
+        font-size: 1.7rem;
+    }
+
+    footer .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    footer .logo span {
+        font-size: 1rem;
+    }
+
+    footer .menu ul {
+        gap: 14px 18px;
+    }
+
+    footer .menu a {
+        font-size: 0.82rem;
+    }
+
+    footer .social-media {
+        gap: 22px;
+    }
+
+    footer .social-media a {
+        font-size: 1.3rem;
+    }
+
+    footer .container p {
+        font-size: 0.7rem;
+        line-height: 1.6;
+    }
+
+}
+
+
+/* =====================================
+   TELAS MUITO PEQUENAS
+===================================== */
+
+@media (max-width: 360px) {
+
+    footer {
+        padding: 25px 12px 18px;
+    }
+
+    footer .menu ul {
+        gap: 12px;
+    }
+
+    footer .menu a {
+        font-size: 0.78rem;
+    }
+
+    footer .social-media {
+        gap: 18px;
+    }
+
 }

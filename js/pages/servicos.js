@@ -1,35 +1,37 @@
 
+const assetsUrl = new URL("../../assets/icons/", import.meta.url);
+
 const servicos = [
     {
-        icone: "assets/icons/icone1.png",
+        icone: new URL("icone1.png", assetsUrl).href,
         titulo: "Fisioterapia Ortopédica <br> e Traumatológica",
         descricao: "Tratamento para lesões, dores e recuperação pós-cirúrgica.",
         
     },
 
     {
-        icone: "assets/icons/icone2.png",
+        icone: new URL("icone2.png", assetsUrl).href,
         titulo: "Fisioterapia Esportiva",
         descricao: "Prevenção e reabilitação de lesões esportivas.",
         pages: "./PagesHTML/sobre_esportiva.html"
     },
 
     {
-        icone: "assets/icons/icone3.png",
+        icone: new URL("icone3.png", assetsUrl).href,
         titulo: "Fisioterapia Neurológica",
         descricao: "Tratamento para condições neurológicas e recuperação funcional.",
         
     },
 
     {
-        icone: "assets/icons/icone4.png",
+        icone: new URL("icone4.png", assetsUrl).href,
         titulo: "Pilates Clínico",
         descricao: "Fortalecimento, mobilidade e equilíbrio corporal.",
 
     },
 
     {
-        icone: "assets/icons/icone5.png",
+        icone: new URL("icone5.png", assetsUrl).href,
         titulo: "Reabilitação Funcional",
         descricao: "Recupera sua autonomia e qualidade de vida.",
     }

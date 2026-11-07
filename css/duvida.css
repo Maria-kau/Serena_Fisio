@@ -1,0 +1,198 @@
+body.modal-aberto {
+    overflow: hidden;
+}
+
+.duvidas-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    padding: 24px;
+    background: rgba(15, 34, 25, 0.62);
+}
+
+.duvidas-card {
+    position: relative;
+    width: min(100%, 520px);
+    max-height: min(90vh, 760px);
+    max-height: min(90dvh, 760px);
+    overflow-y: auto;
+    padding: 40px;
+    border: 1px solid #e2e8df;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.duvidas-card h2 {
+    padding-right: 28px;
+    color: #536b50;
+    font-size: 1.55rem;
+}
+
+.duvidas-card > p {
+    margin-top: 8px;
+    color: #697267;
+}
+
+.duvidas-card button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.duvidas-card .fechar-duvidas,
+.lista-container > button {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #edf2eb;
+    color: #36513a;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+#btn-card-duvidas {
+    margin-top: 18px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #536b50;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+#duvida-form {
+    display: grid;
+    gap: 18px;
+    margin-top: 24px;
+}
+
+#duvida-form .campo {
+    display: grid;
+    gap: 7px;
+}
+
+#duvida-form label {
+    color: #424b40;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+#duvida-form input,
+#duvida-form textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #dce3d8;
+    border-radius: 8px;
+    background: #fcfdfb;
+    color: #424b40;
+    font: inherit;
+}
+
+#duvida-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#duvida-form input:focus,
+#duvida-form textarea:focus {
+    outline: 2px solid rgba(113, 135, 107, 0.35);
+    border-color: #71876b;
+}
+
+#duvida-form .btn-enviar {
+    width: 100%;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 8px;
+    background: #62795c;
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+#duvida-form .btn-enviar:hover {
+    background: #4d6549;
+}
+
+.lista-container {
+    position: relative;
+    margin-top: 24px;
+    padding: 22px 18px 18px;
+    border: 1px solid #e2e8df;
+    border-radius: 12px;
+    background: #f7f8f4;
+}
+
+.lista-container[hidden],
+#mensagem-vazia[hidden] {
+    display: none;
+}
+
+.lista-container h3 {
+    padding-right: 32px;
+    color: #536b50;
+    font-size: 1.1rem;
+}
+
+.lista-container .mensagem-vazia {
+    margin-top: 12px;
+    font-size: 0.9rem;
+}
+
+#lista-duvidas {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 0;
+    list-style: none;
+}
+
+#lista-duvidas li {
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff;
+    overflow-wrap: anywhere;
+}
+
+#lista-duvidas li strong {
+    color: #536b50;
+}
+
+#lista-duvidas li p {
+    margin-top: 4px;
+    font-size: 0.9rem;
+}
+
+.duvidas-card button:focus-visible {
+    outline: 3px solid #8da78b;
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .duvidas-overlay {
+        align-items: end;
+        padding: 12px;
+    }
+
+    .duvidas-card {
+        width: 100%;
+        max-height: 92vh;
+        max-height: 92dvh;
+        padding: 32px 20px 24px;
+        border-radius: 16px;
+    }
+
+    .duvidas-card h2 {
+        font-size: 1.3rem;
+    }
+}

@@ -1,20 +1,21 @@
+const logoUrl = new URL("../../assets/icons/ico.logo.png", import.meta.url).href;
 
 export function Footer() {
-    return `
+  return `
         <footer>
             
             <div class="logo">
-                <img src="assets/icons/ico.logo.png" alt="Logo" width="50" height="50">
+                <img src="${logoUrl}" alt="Logo" width="50" height="50">
                 <span>Dra. Helena Lopes</span>
             </div>
             <div class="container">
                 <nav class="menu">
                     <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
-                        <li><a href="servicos.html">Serviços</a></li>
-                        <li><a href="depoimento.html">Depoimentos</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="../index.html#inicio">Início</a></li>
+                        <li><a href="../index.html#sobre">Sobre</a></li>
+                        <li><a href="../index.html#servicos">Serviços</a></li>
+                        <li><a href="../index.html#contato">Contato</a></li>
+                        <li><a href="#" class="btn-duvidas">Dúvidas</a></li>
                     </ul>
                 </nav>
                 <p>

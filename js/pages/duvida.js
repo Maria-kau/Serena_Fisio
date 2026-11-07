@@ -1,25 +1,38 @@
 
 export function Duvida() {
     return `
-        <div id="duvidas" class="duvidas-card">
+        <div id="duvidas" class="duvidas-overlay">
+            <section
+                class="duvidas-card"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="titulo-duvidas"
+                tabindex="-1"
+            >
 
             <button
                 id="fechar-duvidas"
+                class="fechar-duvidas"
                 type="button"
-                aria-label="Fechar"
+                aria-label="Fechar dúvidas"
             >
                 &times;
             </button>
 
-            <h2>Olá! Qual é a sua dúvida?</h2>
+            <h2 id="titulo-duvidas">Olá! Qual é a sua dúvida?</h2>
 
             <p>
                 Estamos aqui para ajudar você.
             </p>
 
-            <a href="#" id="btn-card-duvidas">
+            <button
+                type="button"
+                id="btn-card-duvidas"
+                aria-controls="card-lista-duvidas"
+                aria-expanded="false"
+            >
                 Clique para ver dúvidas respondidas
-            </a>
+            </button>
 
             <form id="duvida-form">
 
@@ -29,6 +42,7 @@ export function Duvida() {
                     <input
                         type="text"
                         id="nome-duvida"
+                        name="nome"
                         placeholder="Digite seu nome"
                         required
                     >
@@ -39,6 +53,7 @@ export function Duvida() {
 
                     <textarea
                         id="texto-duvida"
+                        name="duvida"
                         placeholder="Escreva sua dúvida..."
                         rows="4"
                         required
@@ -51,7 +66,7 @@ export function Duvida() {
 
             </form>
 
-            <div id="card-lista-duvidas" class="lista-container">
+            <div id="card-lista-duvidas" class="lista-container" hidden>
 
                 <button
                     id="fechar-card-duvida"
@@ -63,7 +78,7 @@ export function Duvida() {
 
                 <h3>Dúvidas enviadas</h3>
 
-                <p id="mensagem-vazia">
+                <p id="mensagem-vazia" class="mensagem-vazia">
                     Ainda não há dúvidas cadastradas.
                 </p>
 
@@ -71,6 +86,7 @@ export function Duvida() {
 
             </div>
 
+            </section>
         </div>
     `;
 }

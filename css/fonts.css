@@ -8,11 +8,13 @@ p, span, small, strong, label {
     margin: 0;
 }
 
+
 /* =====================================
    TÍTULOS
 ===================================== */
 
 /* Título principal */
+
 h1 {
     font-family: "Cinzel Decorative", serif;
     font-size: 42px;
@@ -20,10 +22,14 @@ h1 {
     line-height: 1.2;
     color: #0a3923;
 }
-.cta-text h2,.cta-text h3{
+
+.cta-text h2,
+.cta-text h3 {
     color: #c8dbcc;
 }
+
 /* Título secundário */
+
 h2 {
     font-family: "Cinzel", serif;
     font-size: 30px;
@@ -33,6 +39,7 @@ h2 {
 }
 
 /* Subtítulos */
+
 h3 {
     font-family: "Cinzel", serif;
     font-size: 22px;
@@ -42,6 +49,7 @@ h3 {
 }
 
 /* Títulos menores */
+
 h4 {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
@@ -64,11 +72,11 @@ h6 {
     color: #0a3923;
 }
 
+
 /* =====================================
    PARÁGRAFOS
 ===================================== */
 
-/* Parágrafo padrão */
 p {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
@@ -76,10 +84,13 @@ p {
     line-height: 1.7;
     color: #555;
 }
+
 .cta-text p {
     color: #d2eed7;
 }
+
 /* Parágrafo de destaque */
+
 .p-highlight {
     font-size: 17px;
     font-weight: 500;
@@ -88,6 +99,7 @@ p {
 }
 
 /* Parágrafo secundário */
+
 .p-secondary {
     font-size: 14px;
     font-weight: 300;
@@ -96,6 +108,7 @@ p {
 }
 
 /* Parágrafo pequeno */
+
 .p-small {
     font-size: 12px;
     font-weight: 300;
@@ -104,6 +117,7 @@ p {
 }
 
 /* Parágrafo introdutório */
+
 .p-intro {
     font-size: 18px;
     font-weight: 300;
@@ -112,6 +126,7 @@ p {
 }
 
 /* Parágrafo descritivo */
+
 .p-description {
     font-size: 14px;
     font-weight: 400;
@@ -119,31 +134,28 @@ p {
     color: #666;
 }
 
+
 /* =====================================
    TEXTOS COMPLEMENTARES
 ===================================== */
 
-/* Texto em destaque */
 strong {
     font-weight: 600;
     color: #0a3923;
 }
 
-/* Texto secundário */
 small {
     font-size: 12px;
     font-weight: 300;
     color: #888;
 }
 
-/* Texto de legenda */
 .caption {
     font-size: 11px;
     font-weight: 400;
     color: #888;
 }
 
-/* Texto de seção */
 .section-label {
     font-size: 12px;
     font-weight: 600;
@@ -152,7 +164,6 @@ small {
     color: #64836e;
 }
 
-/* Texto elegante */
 .text-elegant {
     font-family: "Cinzel", serif;
     font-size: 16px;
@@ -160,11 +171,13 @@ small {
     color: #04452c;
 }
 
+
 /* =====================================
    UTILITÁRIOS DE TEXTO
 ===================================== */
 
 /* Alinhamento */
+
 .text-center {
     text-align: center;
 }
@@ -182,6 +195,7 @@ small {
 }
 
 /* Pesos */
+
 .text-light {
     font-weight: 300;
 }
@@ -203,6 +217,7 @@ small {
 }
 
 /* Cores */
+
 .text-primary {
     color: #0a3923;
 }
@@ -219,8 +234,38 @@ small {
     color: #fff;
 }
 
+
 /* =====================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE - TABLETS
+===================================== */
+
+@media (max-width: 1024px) {
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    h3 {
+        font-size: 21px;
+    }
+
+    .p-intro {
+        font-size: 17px;
+    }
+
+    .p-highlight {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - CELULARES
 ===================================== */
 
 @media (max-width: 768px) {
@@ -241,12 +286,157 @@ small {
         font-size: 17px;
     }
 
+    h5 {
+        font-size: 15px;
+    }
+
+    h6 {
+        font-size: 13px;
+    }
+
     p {
         font-size: 14px;
     }
 
+    .p-highlight {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .p-secondary {
+        font-size: 13px;
+    }
+
+    .p-small {
+        font-size: 11px;
+    }
+
     .p-intro {
         font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .p-description {
+        font-size: 13px;
+    }
+
+    .caption {
+        font-size: 10px;
+    }
+
+    .section-label {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .text-elegant {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - CELULARES PEQUENOS
+===================================== */
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 26px;
+        line-height: 1.25;
+    }
+
+    h2 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    h6 {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .p-highlight {
+        font-size: 14px;
+    }
+
+    .p-secondary {
+        font-size: 12px;
+    }
+
+    .p-small {
+        font-size: 10px;
+    }
+
+    .p-intro {
+        font-size: 15px;
+    }
+
+    .p-description {
+        font-size: 12px;
+    }
+
+    .section-label {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .text-elegant {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - TELAS MUITO PEQUENAS
+===================================== */
+
+@media (max-width: 360px) {
+
+    h1 {
+        font-size: 23px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .p-intro {
+        font-size: 14px;
+    }
+
+    .p-highlight {
+        font-size: 13px;
     }
 
 }

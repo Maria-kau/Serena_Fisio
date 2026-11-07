@@ -1,0 +1,384 @@
+
+/* =====================================
+   FONTES GOOGLE
+===================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+/* =====================================
+   RESET GLOBAL
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #a8c1ad;
+}
+
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+}
+
+
+/* =====================================
+   AGENDAMENTO - DRA. HELENA LOPES
+===================================== */
+
+/* Configurações gerais */
+
+.appointment-main {
+    width: 100%;
+    min-height: 100vh;
+    padding: calc(var(--header-height, 70px) + 35px) 20px 60px;
+    background-color: #f7f8f4;
+}
+
+.appointment-section {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 45px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(45, 65, 45, 0.08);
+}
+
+/* Cabeçalho */
+
+.appointment-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.appointment-header h1 {
+    color: #536b50;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.appointment-header p {
+    color: #777d73;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Formulário */
+
+#appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#appointment-form > .form-group:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#appointment-form > .form-group:first-of-type legend,
+#appointment-form > .form-group:first-of-type .form-field:first-of-type {
+    grid-column: 1 / -1;
+}
+
+/* Grupos de campos */
+
+.form-group {
+    border: 1px solid #e2e8df;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group legend {
+    color: #536b50;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 0 10px;
+}
+
+/* Campos */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-field label {
+    color: #424b40;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Inputs, selects e textarea */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dce3d8;
+    border-radius: 8px;
+    background-color: #fcfdfb;
+    color: #424b40;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito ao clicar */
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #71876b;
+    box-shadow: 0 0 0 3px rgba(113, 135, 107, 0.12);
+}
+
+/* Placeholder */
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #a5aaa1;
+}
+
+/* Textarea */
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Botão */
+
+.appointment-button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 9px;
+    background-color: #62795c;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.appointment-button:hover {
+    background-color: #4d6549;
+    transform: translateY(-2px);
+}
+
+#services-container {
+    width: 100%;
+}
+
+#services-container .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+#services-container .service-card {
+    min-width: 0;
+    margin: 0;
+    gap: 12px;
+    text-align: center;
+}
+
+#services-container .service-card h3 {
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+/* Tablets e telas menores */
+
+@media (max-width: 1024px) {
+
+    .appointment-main {
+        padding: 45px 25px;
+    }
+
+    .appointment-section {
+        max-width: 750px;
+        padding: 35px;
+    }
+
+}
+
+/* Tablets pequenos */
+
+@media (max-width: 768px) {
+
+    .appointment-main {
+        padding: 35px 18px;
+    }
+
+    .appointment-section {
+        width: 100%;
+        padding: 30px 22px;
+    }
+
+    .appointment-header {
+        margin-bottom: 30px;
+    }
+
+    .appointment-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .appointment-header p {
+        font-size: 0.9rem;
+    }
+
+    #appointment-form {
+        gap: 25px;
+    }
+
+    .form-group {
+        padding: 22px 18px;
+        gap: 18px;
+    }
+
+    .appointment-main > .services-section {
+        padding: 55px 25px;
+    }
+
+    .form-group legend {
+        font-size: 1.05rem;
+    }
+
+}
+
+/* Celulares */
+
+@media (max-width: 480px) {
+
+    .appointment-main {
+        padding: 25px 12px;
+    }
+
+    .appointment-section {
+        padding: 25px 16px;
+        border-radius: 12px;
+    }
+
+    .appointment-header {
+        margin-bottom: 25px;
+    }
+
+    .appointment-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .appointment-header p {
+        font-size: 0.85rem;
+    }
+
+    #appointment-form {
+        gap: 22px;
+    }
+
+    .form-group {
+        padding: 20px 14px;
+        gap: 16px;
+    }
+
+    #appointment-form > .form-group:first-of-type {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .appointment-main > .services-section {
+        padding: 40px 12px;
+    }
+
+    .form-group legend {
+        font-size: 0.95rem;
+    }
+
+    .form-field {
+        gap: 7px;
+    }
+
+    .form-field label {
+        font-size: 0.85rem;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .form-field textarea {
+        min-height: 100px;
+    }
+
+    .appointment-button {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+
+}
+
+/* Celulares muito pequenos */
+
+@media (max-width: 360px) {
+
+    .appointment-main {
+        padding: 20px 8px;
+    }
+
+    .appointment-section {
+        padding: 20px 12px;
+    }
+
+    .appointment-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .form-group {
+        padding: 18px 11px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        font-size: 0.8rem;
+    }
+
+}
